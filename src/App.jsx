@@ -10,10 +10,11 @@ export default function App() {
     Fourth: 0,
   });
 
-  function setCurValue(newVal) {
-    const newTabValues = tabValues.slice();
-    newTabValues[openTab] = newVal;
-    setTabValues(newTabValues);
+  function addValueToTab(amount) {
+    setTabValues((prev) => ({
+      ...prev,
+      [openTab]: prev[openTab] + amount,
+    }));
   }
 
   const tabs = {
@@ -68,7 +69,7 @@ export default function App() {
         name={openTab}
         tabs={tabs}
         value={tabValues[openTab]}
-        setValue={setCurValue}
+        setValue={addValueToTab}
       ></Tab>
     </div>
   );
@@ -109,7 +110,7 @@ function Tab({ name, tabs, value, setValue }) {
       <p>{tabs[name].description}</p>
       <button
         className="bg-neutral-950 text-stone-50 w-full rounded-xl cursor-pointer h-24 sm:h-36 md:h-48"
-        onClick={() => setValue(value + tabs[name].increaser)}
+        onClick={() => setValue(tabs[name].increaser)}
       >
         {name} {tabs[name].buttonText} {value}
       </button>
