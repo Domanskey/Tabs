@@ -84,6 +84,7 @@ function Heading({ name, tabs, changeTab }) {
             <button
               key={tabs[element].id}
               className="cursor-pointer p-1 border-b-2"
+              aria-label={`${element} tab`}
             >
               {element}
             </button>
@@ -94,6 +95,7 @@ function Heading({ name, tabs, changeTab }) {
               key={tabs[element].id}
               className="text-gray-400 cursor-pointer p-1 border-b-2 border-transparent"
               onClick={() => changeTab(element)}
+              aria-label={`${element} tab`}
             >
               {element}
             </button>
@@ -111,6 +113,7 @@ function Tab({ name, tabs, value, setValue }) {
       <button
         className="bg-neutral-950 text-stone-50 w-full rounded-xl cursor-pointer h-24 sm:h-36 md:h-48"
         onClick={() => setValue(tabs[name].increaser)}
+        aria-label="Increase Count"
       >
         {name} {tabs[name].buttonText} {value}
       </button>
