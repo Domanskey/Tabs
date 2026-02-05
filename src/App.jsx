@@ -41,7 +41,7 @@ export default function App() {
       increaser: 3,
       title: "Breaking: Local dev gives up!",
       description:
-        "This paragraph was meant to be a masterpiece of modern literature. Instead, it’s just a collection of words that make me sad.",
+        "This paragraph was meant to be a masterpiece of modern literature. Instead, it’s just a collection of random words.",
       buttonText: "Masher!!",
       ending: "Expectations were low, but I still managed to disappoint.",
     },
@@ -60,7 +60,7 @@ export default function App() {
     <div
       aria-label="tablist"
       role="tablist"
-      className="border rounded-xl p-4 sm:px-7 md:px-10 min-w-80 max-w-3xl sm:text-lg md:text-xl"
+      className="border rounded-xl p-4 sm:px-7 md:px-10 min-w-80 max-w-3xl sm:text-lg md:text-xl max-[388px]:min-h-93 max-[474px]:min-h-87 max-[522px]:min-h-81"
     >
       <Heading name={openTab} tabs={tabs} changeTab={setOpenTab}></Heading>
 
